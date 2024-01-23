@@ -128,10 +128,10 @@ const handleDelete = (key) => {
 function BlockEntry() {
   const navigate = useNavigate();
   const handlePrevious = () => {
-    navigate("/upload-documents");
+    navigate("/project-registration/upload-documents");
   };
   const handleNext = () => {
-    navigate("/map");
+    navigate("/project-registration/map");
   };
   return (
     <>

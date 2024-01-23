@@ -190,7 +190,7 @@ const Prviousdetails = () => {
             <button className="file-btn"><TbFileSearch style={{width:"15px",height:"15px"}}/>  View File / 1 </button>
           </section>
 
-          <button type="submit" className="file-btn" style={{ display: "block", margin: "auto" }}>Save & Next</button>
+          <button type="submit" className="file-btn" style={{ display: "block", margin: "auto" }} onClick={(values)=>{console.log(values)}}>Save & Next</button>
         </form>
       </div>
       </section>

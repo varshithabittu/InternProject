@@ -10,6 +10,7 @@ import AddProfessionals from './AddProfessionals';
 import Map from './Map';
 import Login from './Login';
 import RegistrationForm from './RegistrationForm';
+import Dashboard from './Dashboard';
 const ProjectRegistrationLists = () => {
   return (
     <div style={{width:'100%'}}>
@@ -25,8 +26,6 @@ function Content(){
     return(
         <div>
             <Routes>
-                <Route path='/registration-form' element={<RegistrationForm/>}></Route>
-                <Route path='/login' element={<Login/>}></Route>
                 <Route path='/promoter-detail' element={<Promoterdetail/>}></Route>
                 <Route path='/previous-project' element={<Prviousdetails/>}></Route>
                 <Route path='/project-detail' element={<ProjectRegistration/>}></Route>
