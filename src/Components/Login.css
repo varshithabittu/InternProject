@@ -1,0 +1,12 @@
+.cardStyle{
+    width: 620px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    display: block;
+    width: 50%;
+    height: 700px;
+}

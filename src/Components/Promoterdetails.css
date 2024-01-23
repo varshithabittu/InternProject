@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+  h2{
+    border-bottom: solid rgb(206, 203, 203) 1px;
+  }
+  
+  input{
+    height: 25px;
+    width: 330px;
+    background-color: rgb(228, 231, 235);
+    border-radius: 3px;
+    border: solid rgb(214, 212, 209) 1px;
+    padding: 10px;
+  }
+  
+  .radioinput input{
+    width: 13px;
+  }
+  
+  .radioinput{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  header{
+    background-color: rgb(72, 123, 175);
+  }
+  
+  
+  #searchbar{
+    display: flex;
+  
+    width: 30%;
+  }
+  #input{
+    width: 70%;
+    height: 24px ;
+  }
+  #btn{
+    width: 50px;
+    height: 24px;
+  }
+  #logo{
+    font-size: 13px;
+    width: 18%;
+    font-weight: bolder;
+  }
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  
+  }
+  
+  .navlist{
+    text-decoration: none;
+    color: black;
+  }
+  #sidebarnav{
+    height: 100vh;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-right: solid 2px rgb(165, 163, 163);
+    padding: 10px;
+    margin-top: 8px;
+  }
+  .sidebarcontent{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+  }
+  
+  
+  
+  .main{
+    display: flex;
+    gap: 22px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  
+  .heading2{
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .heading1{
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .labels{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .li{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .bigdiv input{
+    width: 100%;
+  }
+  
+  .projectdetails{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  
+  #head2div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  
+  #sidebardiv{
+    width: 20%;
+  }
+  #formdiv{
+    width: 75%;
+  }
+  
+  #mainlabel{
+    font-size: 14px;
+    font-weight: 750;
+  }
+  
+  .longlabels label{
+    max-width: 340px;
+  }
+  
+  .Adrlabels input{
+    width: 500px;
+    height: 45px;
+  }
+  
+  .pdflex{
+    display: flex;
+    gap: 40px;
+    margin-left: 6px;
+  }
+  
+  .openlabel{
+    font-weight: 750;
+  }
