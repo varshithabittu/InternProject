@@ -1,0 +1,54 @@
+.my-form {
+  padding-bottom: 2%;
+  border-color: rgb(17, 96, 164);
+}
+.heading {
+  align-items: center;
+  line-height: 2%;
+  color: orange;
+  margin-top: 2%;
+}
+.required-fields::before {
+  content: "*";
+  color: red;
+}
+.for-kyc {
+  background-color: rgb(239, 238, 236);
+  height: 40px;
+  width: 95%;
+  margin-top: 3px;
+}
+.form-group {
+  display: flex;
+  gap: 100px;
+}
+label {
+  width: 400px; /* Set a fixed width for labels */
+  padding-right: 5%;
+}
+input {
+  height: 25px;
+  width: 300px;
+}
+button {
+  width: 100px;
+  background-color: green;
+  border-radius: 6%;
+  height: 30px;
+  color: white;
+  margin-left: 45%;
+  text-align: center;
+  font-size: 20px;
+}
+input[type="file"] {
+  display: none;
+}
+.styling {
+  color: #fff;
+  width: 400px;
+  background-color: green;
+  padding: 10px 10px;
+  border-radius: 3px;
+  font-size: 18px;
+  text-align: end;
+}

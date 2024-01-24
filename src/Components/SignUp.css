@@ -1,0 +1,9 @@
+.cardStyles {
+  width: 100vh;
+  height: 35%;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  /* margin-right: 10px; */
+}

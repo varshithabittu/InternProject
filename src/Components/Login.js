@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Button, Flex, Form, Input } from "antd";
-import logo from "./loginLogo.png";
+import {useNavigate} from 'react-router-dom';
 import { UserOutlined, LockOutlined } from "@ant-design/icons/lib/icons";
 import "./Login.css";
 
 const Login = () => {
+  const navigate=useNavigate();
   return (
     <>
       <Card hoverable className="cardStyle" bodyStyle={{ padding: 0, overflow: "hidden" }}>
@@ -39,9 +40,15 @@ const Login = () => {
                 >
                   <Input.Password placeholder="Enter password" prefix={<LockOutlined />} />
                 </Form.Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" htmlType="submit" style={{display:'block'}}>
                   Login
                 </Button>
+                <div>
+                  <p style={{fontFamily:'sans-serif'}}>For first time user, Please create profile through Sign Up</p>
+                  <Button type="primary" style={{display:'block'}} onClick={()=>{
+                    navigate('/signup');
+                  }}>Sign Up</Button>
+                </div>
               </Form>
             </Flex>
       </Card>
