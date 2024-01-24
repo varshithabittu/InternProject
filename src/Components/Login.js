@@ -8,12 +8,7 @@ const Login = () => {
   return (
     <>
       <Card hoverable className="cardStyle" bodyStyle={{ padding: 0, overflow: "hidden" }}>
-        <Flex justify="space-between">
-          <div style={{ width: '50%' }}>
-            <img className="logo" src={logo} alt="Login Logo" style={{ width: '100%', height: '100%' }} />
-          </div>
-          <div style={{ width: '50%' }}>
-            <Flex vertical align="center" justify="center" style={{ padding: 32, height: '100%' }}>
+            <Flex vertical style={{height:'50%'}}>
               <h2>Login</h2>
               <Form
                 onFinish={(values) => {
@@ -49,8 +44,6 @@ const Login = () => {
                 </Button>
               </Form>
             </Flex>
-          </div>
-        </Flex>
       </Card>
     </>
   );

@@ -13,13 +13,13 @@ const Dashboard = () => {
             <div className='maincontent'>
             <div className='nav-title'>Registration</div>
         </div>
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'aliceblue', height:'100%'}}>
             <Button type='Primary' onClick={()=>{
                 navigate('/login')
-            }}>Login</Button>
+            }} style={{backgroundColor:'orange'}}>Login</Button>
             <Button type='Primary' onClick={()=>{
                navigate('/project-registration/promoter-detail')
-            }}>Project-Registeration</Button>
+            }}style={{backgroundColor:'orange', marginLeft:'20px'}}>Project-Registeration</Button>
         </div>
         </div>
     </>

@@ -117,7 +117,7 @@ const data = [
   },
 ];
 const handleEdit = (key) => {
-  // Implement edit functionality here
+  
   message.success(`Editing record with key: ${key}`);
 };
 
