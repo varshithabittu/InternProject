@@ -1,11 +1,13 @@
 *{
     height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
 .my-form {
+    margin-top: 10px;
     padding-bottom: 2%;
-    /* display: flex;
-    flex-direction: column; */
     margin-top: 10px;
   }
   .heading{

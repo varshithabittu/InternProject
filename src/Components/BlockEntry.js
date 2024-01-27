@@ -40,11 +40,11 @@ const columns = [
     key: "developmentendDate",
   },
   {
-    title: "All Commencement Certificates of this block",
+    title: "All Commencement Certificates of this block     ",
     dataIndex: "commencementCertif",
     key: "commencementCertif",
-    render: (text, record) => (
-      <Upload beforeUpload={() => false} showUploadList={false}>
+    render: () => (
+      <Upload>
         <Button icon={<UploadOutlined />}>Upload</Button>
       </Upload>
     ),
@@ -117,7 +117,6 @@ const data = [
   },
 ];
 const handleEdit = (key) => {
-  
   message.success(`Editing record with key: ${key}`);
 };
 
@@ -148,7 +147,7 @@ function BlockEntry() {
               dataSource={data}
               pagination={false}
               size="middle"
-              style={{ width: "auto" }}
+              style={{ width: "100%" }}
             />
           </div>
         </div>
@@ -160,9 +159,11 @@ function BlockEntry() {
             <hr></hr>
           </div>
           <div style={{ width: "100%" }}>
-            <Form onFinish={(values)=>{
-                console.log("Regiestered fields:",values)
-            }}>
+            <Form
+              onFinish={(values) => {
+                console.log("Regiestered fields:", values);
+              }}
+            >
               <div style={{ width: "auto" }}>
                 <section className="innersection">
                   <Flex justify="space-between" align="flex-start">
@@ -324,7 +325,7 @@ function BlockEntry() {
                   wrapperCol={{ span: 24 }}
                 >
                   <Upload maxCount={1}>
-                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
+                    <Button icon={<UploadOutlined />}>Upload</Button>
                   </Upload>
                 </Form.Item>
               </section>
@@ -346,25 +347,21 @@ function BlockEntry() {
               {/* </section> */}
             </Form>
           </div>
-
           <div>
-            <Flex justify="center" align="flex-end">
-              <div>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'flex-end'}}>
                 <Button
-                  style={{ marginRight: "10px", backgroundColor: "green" }}
+                  style={{ backgroundColor: "green",color:'white' }}
                   onClick={handlePrevious}
                 >
                   Previous
                 </Button>
                 <Button
-                  style={{ backgroundColor: "green" }}
+                  style={{ marginRight:'2px',backgroundColor: "green",color:'white' }}
                   onClick={handleNext}
                 >
                   Next
                 </Button>
-                {/* defaultSelectedKeys={[window.location.pathname]} */}
-              </div>
-            </Flex>
+            </div>
           </div>
         </div>
       </section>

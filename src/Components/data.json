@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "reg": 300,
+    "name": "Spandana",
+    "pan": 1,
+    "email": "spandana@gmail.com",
+    "mobile": 9391427653,
+    "address": "Sircilla"
+  },
+  {
+    "id": 2,
+    "reg": 301,
+    "name": "Varshitha",
+    "pan": 2,
+    "email": "varshitha@gmail.com",
+    "mobile": 9391427658,
+    "address": "Miryalaguda"
+  }
+]
