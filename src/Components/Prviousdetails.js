@@ -3,7 +3,6 @@ import { TbFileSearch } from "react-icons/tb";
 import { TiDelete } from "react-icons/ti";
 import './prviousdetails.css';
 const Prviousdetails = () => {
-
   return (
     <>
     <section style={{display:"flex"}}>

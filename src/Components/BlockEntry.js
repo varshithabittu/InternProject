@@ -43,6 +43,7 @@ const columns = [
     title: "All Commencement Certificates of this block     ",
     dataIndex: "commencementCertif",
     key: "commencementCertif",
+    width:'20%',
     render: () => (
       <Upload>
         <Button icon={<UploadOutlined />}>Upload</Button>
@@ -78,6 +79,7 @@ const columns = [
     title: "Action",
     dataIndex: "",
     key: "x",
+    width:"30%",
     render: (text, record) => (
       <Space>
         <Button
@@ -133,8 +135,8 @@ function BlockEntry() {
     navigate("/project-registration/map");
   };
   return (
-    <>
-      <section className="section-1" style={{ display: "flex" }}>
+    <div style={{width:'100%',overflow:'hidden'}}>
+      <section className="section-1" style={{margin:'5px'}}>
         <div className="container">
           <h5>
             AS UNIQUE NAMES OF BLOCK/TYPES/BUNGOLOWS/CATEGORY OF THE PROJECT AS
@@ -149,11 +151,12 @@ function BlockEntry() {
               size="middle"
               style={{ width: "100%" }}
             />
+            
           </div>
         </div>
       </section>
-      <section className="section-2" style={{ display: "flex" }}>
-        <div className="container-1">
+      <section style={{width:'100%', margin:'5px'}}>
+        <div >
           <h2>ADD BLOCK DETAILS</h2>
           <div>
             <hr></hr>
@@ -172,7 +175,7 @@ function BlockEntry() {
                       label="7.1 Block Name"
                       required
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                       style={{ marginRight: "10px" }}
                     >
                       <Input
@@ -189,7 +192,7 @@ function BlockEntry() {
                       required
                       type="date"
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                       style={{ marginRight: "10px" }}
                     >
                       <DatePicker
@@ -206,7 +209,7 @@ function BlockEntry() {
                       required
                       type="date"
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                     >
                       <DatePicker
                         style={{
@@ -226,7 +229,7 @@ function BlockEntry() {
                       required
                       type="date"
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                       style={{ marginRight: "10px" }}
                     >
                       <DatePicker
@@ -242,7 +245,7 @@ function BlockEntry() {
                       label="7.5 Commencement Certificate No"
                       required
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                       style={{ marginRight: "10px" }}
                     >
                       <Input
@@ -258,7 +261,7 @@ function BlockEntry() {
                       label="7.6 Height(in Meter) as per Section Plan of this Block"
                       required
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                     >
                       <Input
                         style={{
@@ -281,7 +284,7 @@ function BlockEntry() {
                       label="7.7 FSI OF BLOCK(In Sq Meter)"
                       required
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                     >
                       <Input
                         style={{
@@ -296,7 +299,7 @@ function BlockEntry() {
                       label="7.8 Built-up Area of Block(In Sq Meter)"
                       required
                       labelCol={{ span: 24 }}
-                      wrapperCol={{ span: 24 }}
+                      wrapperCol={{ span: 16 }}
                     >
                       <Input
                         style={{
@@ -322,7 +325,7 @@ function BlockEntry() {
                     },
                   ]}
                   labelCol={{ span: 24 }}
-                  wrapperCol={{ span: 24 }}
+                  wrapperCol={{ span: 16 }}
                 >
                   <Upload maxCount={1}>
                     <Button icon={<UploadOutlined />}>Upload</Button>
@@ -331,8 +334,6 @@ function BlockEntry() {
               </section>
               <Form.Item
                 style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
                   marginTop: "20px",
                 }}
               >
@@ -347,25 +348,31 @@ function BlockEntry() {
               {/* </section> */}
             </Form>
           </div>
-          <div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'flex-end'}}>
-                <Button
-                  style={{ backgroundColor: "green",color:'white' }}
-                  onClick={handlePrevious}
-                >
-                  Previous
-                </Button>
-                <Button
-                  style={{ marginRight:'2px',backgroundColor: "green",color:'white' }}
-                  onClick={handleNext}
-                >
-                  Next
-                </Button>
-            </div>
+          <div
+            style={{
+              backgroundColor: "black",
+            }}
+          >
+            <Button
+              style={{ backgroundColor: "green", color: "white" }}
+              onClick={handlePrevious}
+            >
+              Previous
+            </Button>
+            <Button
+              style={{
+                marginRight: "2px",
+                backgroundColor: "green",
+                color: "white",
+              }}
+              onClick={handleNext}
+            >
+              Next
+            </Button>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

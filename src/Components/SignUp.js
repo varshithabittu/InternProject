@@ -1,11 +1,24 @@
 import React from "react";
-import { Card, Flex, Form, Input, Select, Button } from "antd";
-import firebase from "./firebase.js";
+import { Card, Flex, Form, Input, Select, Button,message } from "antd";
+// import firebase from "./firebase.js";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 const { Option } = Select;
-const SignUp = () => {
+const SignUp = ({onSuccess}) => {
   const navigate=useNavigate();
+
+  const handleSignUp=()=>{
+   try{
+    onSuccess();
+    message.success('Sign in Successful')
+    navigate('/register')
+   } 
+   catch(error)
+   {
+    message.error('Error in signing up. Please try again');
+    navigate('/signup')
+   }
+  }
   return (
     <>
       <Card
@@ -24,8 +37,9 @@ const SignUp = () => {
               label="EmailId"
               labelCol={24}
               wrapperCol={24}
+              required
             >
-              <Input />
+              <Input required/>
             </Form.Item>
             <Form.Item
               name="mobile"
@@ -52,9 +66,7 @@ const SignUp = () => {
                 type="primary"
                 htmlType="submit"
                 style={{ display: "block", alignContent: "center" }}
-                onClick={()=>{
-                  navigate('/register')
-                }}
+                onClick={handleSignUp}
               >
                 Send OTP
               </Button>

@@ -18,8 +18,6 @@ const Register = () => {
                             type="number"
                             name="panNo"
                             id="panNo"
-                            //   value={formData.panNo}
-                            //   onChange={handleChange}
                             required
                             />
                         </label>
@@ -30,13 +28,9 @@ const Register = () => {
                             <input
                             type="text"
                             name="names"
-                            //   value={formData.name}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>
-                    
-                        
                         
                         <div className="required-fields">
                         <label>
@@ -44,8 +38,6 @@ const Register = () => {
                             <input 
                             type="email"
                             name="email"
-                            //   value={formData.email}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>
@@ -59,8 +51,6 @@ const Register = () => {
                             <input 
                             type="number"
                             name="mobile"
-                            //   value={formData.mobile}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>
@@ -71,8 +61,6 @@ const Register = () => {
                             <input 
                             type="text"
                             name="address"
-                            //   value={formData.address}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>
@@ -83,8 +71,6 @@ const Register = () => {
                             type="text"
                             name="comName"
                             id="comName"
-                            //   value={formData.panNo}
-                            //   onChange={handleChange}
                             required
                             />
                         </label>
@@ -97,8 +83,6 @@ const Register = () => {
                             <input 
                             type="text"
                             name="state"
-                            //   value={formData.mobile}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>
@@ -111,8 +95,6 @@ const Register = () => {
                             type="file"
                             accept=".pdf,.doc"
                             name="file"
-                            //   value={formData.mobile}
-                            //   onChange={handleChange}
                             required
                             />
                         </label></div>

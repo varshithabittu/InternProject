@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./MyForm.css";
-import axios from "axios";
-import jsonData from './data.json';
+import jsonData from "./data.json";
 function AddProfessionals() {
   return (
     <>
@@ -12,12 +11,10 @@ function AddProfessionals() {
     </>
   );
 }
- // Make sure this import is correct
-
- const Mycom = () => {
-  const [userId, setUserId] = useState('');
+const Mycom = () => {
+  const [userId, setUserId] = useState("");
   const [userDetails, setUserDetails] = useState(null); // Rename state variable
-  console.log('userDetails:', userDetails);
+  console.log("userDetails:", userDetails);
 
   const handleUserIdChange = (event) => {
     setUserId(event.target.value);
@@ -26,7 +23,7 @@ function AddProfessionals() {
   const handleFetchuserDetails = () => {
     try {
       if (!jsonData) {
-        throw new Error('jsonData is not available');
+        throw new Error("jsonData is not available");
       }
 
       const user = jsonData.find((user) => user.id === parseInt(userId, 10));
@@ -35,11 +32,11 @@ function AddProfessionals() {
         setUserDetails(user);
       } else {
         setUserDetails(null);
-        alert('User not found');
+        alert("User not found");
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
-      alert('Failed to fetch user data');
+      console.error("Error fetching data:", error);
+      alert("Failed to fetch user data");
     }
   };
   return (
@@ -134,10 +131,12 @@ const ArchitectForm = () => {
   };
 
   return (
-    <div className="forms">
+    <div className="forms" style={{ marginTop: "10px", marginBottom: "5px" }}>
       <div className="heading">
-        <h2>ARCHITECT (ONLY REGISTERED WITH GUJRERA)</h2>
-        <p>
+        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>
+          ARCHITECT (ONLY REGISTERED WITH GUJRERA)
+        </h2>
+        <p style={{ marginTop: "20px" }}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)
         </p>
@@ -295,8 +294,8 @@ const Streng = () => {
   return (
     <div className="forms">
       <div className="heading">
-        <h2>STRUCTURAL (ONLY REGISTERED WITH GUJRERA)</h2>
-        <p>
+        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>STRUCTURAL (ONLY REGISTERED WITH GUJRERA)</h2>
+        <p style={{ marginTop: "20px" }}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)
         </p>
@@ -466,8 +465,8 @@ const Cont = () => {
   return (
     <div className="forms">
       <div className="heading">
-        <h2>CONTRACTOR (ONLY REGISTERED WITH GUJRERA)</h2>
-        <p>
+        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>CONTRACTOR (ONLY REGISTERED WITH GUJRERA)</h2>
+        <p style={{ marginTop: "20px" }}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)
         </p>

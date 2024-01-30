@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card, Button, Flex, Form, Input,message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons/lib/icons";
 import "./Login.css";
-import axios from "axios";
 import usersData from './users.json'
-import { NativeBuffer } from "mongoose";
 
-const Login = () => {
+
+const Login = ({onSuccess}) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +16,8 @@ const Login = () => {
 
     if (user) {
       message.success('Login successful!');
-      navigate('/register');
+      onSuccess();
+      navigate('/project-registration/*');
     } else {
       if(usersData.find((user) => user.username === values.username && user.password !== values.password)){
       message.error('Invalid password. Please try again.');

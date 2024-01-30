@@ -7,7 +7,8 @@
 }
 .container{
     max-width: 100%;
-    margin: 15px;
+    margin-top: 5px;
+    /* margin: 15px; */
 }
 
 *,*::before,*::after{
@@ -24,6 +25,10 @@
    margin: 0;
    margin-bottom: 3px;
 }
+.ant-table-thead > tr > th {
+    height: 30px; 
+  }
+
  /* .innersection{
     display: flex;
     flex-direction: row;

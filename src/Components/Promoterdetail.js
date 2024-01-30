@@ -9,10 +9,10 @@ const Promoterdetail = () => {
       );
   return (
     <form>
-    <h2 class="heading1">PROJECT DETAIL</h2>
+    <h2 class="heading1">PROMOTER DETAIL</h2>
     <div class='projectdetails'>
       <div class="labels">
-        <Input label="1.1 Project Name*" placeholder="Kunj Vani Villa" />
+        <Input label="1.1 Promoter Name*" placeholder="Rajesh" />
         <Input label="1.2 Project Type*" placeholder="Residential" />
         <Input  label="1.3 Project Description*" placeholder="Flat with all facilities..." />
       </div>

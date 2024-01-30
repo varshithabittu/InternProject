@@ -3,8 +3,6 @@ import './Dashboard.css';
 
 import {Button} from 'antd'
 import {useNavigate} from 'react-router-dom'
-import ProjectRegistrationLists from './ProjectRegistrationLists';
-import Login from './Login';
 const Dashboard = () => {
     const navigate=useNavigate();
   return (
@@ -17,9 +15,9 @@ const Dashboard = () => {
             <Button type='Primary' onClick={()=>{
                 navigate('/login')
             }} style={{backgroundColor:'orange'}}>Login</Button>
-            <Button  onClick={()=>{
+            {/* <Button  onClick={()=>{
                navigate('/project-registration/promoter-detail')
-            }}style={{backgroundColor:'orange', width:'auto'}}>Project Registeration</Button>
+            }}style={{backgroundColor:'orange', width:'auto'}}>Project Registeration</Button> */}
         </div>
         </div>
     </>
