@@ -10,7 +10,7 @@ import {
   Form,
   Input,
   DatePicker,
-  Flex,
+  Flex
 } from "antd";
 import {
   UploadOutlined,
