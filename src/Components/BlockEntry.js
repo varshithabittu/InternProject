@@ -22,7 +22,7 @@ const columns = [
   {
     title: "Sr No.",
     dataIndex: "srno",
-    key: "srno",
+    key: "srno"
   },
   {
     title: "Block Name",

@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
 import { generateRegistrationNumber } from './Utility'; 
+import {useNavigate} from "react-router-dom"
 
-const RegistrationForm = () => {
+const RegistrationForm = ({onSuccess}) => {
+  const navigate=useNavigate();
   const [form] = Form.useForm();
   const [registrationNumber, setRegistrationNumber] = useState('');
 
@@ -30,6 +32,9 @@ const RegistrationForm = () => {
           <Input value={registrationNumber} readOnly />
         </Form.Item>
       )}
+      <Button htmlType='submit' onClick={()=>{
+        onSuccess();
+        navigate('/project-registration/*')}}>Ok</Button>
     </Form>
   );
 };

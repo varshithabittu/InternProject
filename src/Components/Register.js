@@ -1,6 +1,8 @@
 import React from "react";
 import "./Register.css";
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+const Register = ({onSuccess}) => {
+    const navigate=useNavigate();
     return (
         <div>
             <h1 style={{fontFamily:'sans-serif',fontWeight:'bold',textAlign:'center'}}>Registration Form</h1>
@@ -117,7 +119,10 @@ const Register = () => {
                     <div className="heading" style={{marginTop:'250px'}}><h2 style={{textDecoration:'none'}}>DECLARATION</h2> </div>
                     <p>  I hereby declare that the details provided above are true and correct to the best of my knowledge, belief and professional certification (if applicable). In case any of the above information is found to be false or untrue or misleading or misrepresenting, I am liable for any legal action as may be decided by Gujarat RERA Authority.</p>
                     <br></br>
-                    <button>Create User</button>
+                    <button onClick={()=>{
+                        onSuccess();
+                        navigate('/registration-form');
+                    }}>Create User</button>
                 </div>
 
         </div>

@@ -11,6 +11,9 @@ import Map from "./Map";
 import Login from "./Login";
 import RegistrationForm from "./RegistrationForm";
 import DevelopmentDetails from "./DevelopmentDetails";
+import UploadDoc from "./UploadDoc";
+import AssignProff from "./AssignProff";
+import Paywall from "./Paywall";
 // import Dashboard from './Dashboard';
 // import PerformCertifi from './PerformCertifi';
 const ProjectRegistrationLists = () => {
@@ -38,20 +41,20 @@ function Content() {
         <Route path="/add-professionals" element={<AddProfessionals />}></Route>
         <Route
           path="/upload-documents"
-          element={<div>upload document</div>}
+          element={<UploadDoc/>}
         ></Route>
         <Route path="/block-entry" element={<BlockEntry />}></Route>
         <Route path="/map" element={<Map />}></Route>
         <Route
           path="/assign-professionals"
-          element={<div>assign professionals</div>}
+          element={<AssignProff/>}
         ></Route>
         <Route
           path="/perform-certification"
           element={<div>heeloo</div>}
         ></Route>
         <Route path="/declaration" element={<div>declaration</div>}></Route>
-        <Route path="/payment-page" element={<div>payment page</div>}></Route>
+        <Route path="/payment-page" element={<Paywall/>}></Route>
       </Routes>
     </div>
   );
