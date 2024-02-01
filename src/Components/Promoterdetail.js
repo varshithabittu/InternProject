@@ -1,5 +1,5 @@
 import React from 'react'
-import './Promoterdetails.css';
+// import './Promoterdetails.css';
 const Promoterdetail = () => {
     const Input = ({ label, placeholder }) => (
         <div class="Input">
@@ -10,8 +10,8 @@ const Promoterdetail = () => {
   return (
     <form>
     <h2 class="heading1">PROMOTER DETAIL</h2>
-    <div class='projectdetails'>
-      <div class="labels">
+    <div class='projectdetails' style={{display:'flex', flexDirection:'column', gap:'16px',marginBottom:'30px'}}>
+      <div class="labels" style={{display:'flex', alignItems:'center',justifyContent:'flex-start',gap:'10px'}}>
         <Input label="1.1 Promoter Name*" placeholder="Rajesh" />
         <Input label="1.2 Project Type*" placeholder="Residential" />
         <Input  label="1.3 Project Description*" placeholder="Flat with all facilities..." />

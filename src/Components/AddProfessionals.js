@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./MyForm.css";
 import jsonData from "./data.json";
-function AddProfessionals() {
+function AddProfessionals() { 
   return (
-    <>
+    <div style={{width:'100%'}}>
       <Mycom />
       <ArchitectForm />
       <Streng />
       <Cont />
-    </>
+    </div>
   );
 }
 const Mycom = () => {
@@ -41,10 +41,10 @@ const Mycom = () => {
   };
   return (
     <div>
-      <div className="forms">
+      <div className="forms" style={{marginTop:'20px',marginBottom:'25px'}}>
         <form>
-          <label className="labels">
-            PAN No :<br></br>
+          <label style={{marginRight:'10px'}}>
+            PAN No : 
             <input
               type="text"
               name="panNo"
@@ -53,7 +53,6 @@ const Mycom = () => {
               required
             />
             <button
-              className="submit-button"
               onClick={handleFetchuserDetails}
               type="button"
             >
@@ -63,7 +62,7 @@ const Mycom = () => {
         </form>
 
         {userDetails && (
-          <form className="my-form">
+          <form className="my-form" style={{marginLeft:'3px'}}>
             <div className="form-group">
               <label className="labels">
                 PAN No :<br></br>
@@ -100,7 +99,7 @@ const Mycom = () => {
               </label>
             </div>
 
-            <button className="add-button">Add</button>
+            <button className="add-button" style={{display:'flex', justifyContent:'flex-end'}}>Add</button>
           </form>
         )}
       </div>
@@ -133,16 +132,16 @@ const ArchitectForm = () => {
   return (
     <div className="forms" style={{ marginTop: "10px", marginBottom: "5px" }}>
       <div className="heading">
-        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>
+        <h2 style={{ marginBottom: "25px"}}>
           ARCHITECT (ONLY REGISTERED WITH GUJRERA)
         </h2>
-        <p style={{ marginTop: "20px" }}>
+        <p style={{ marginBottom: "15px"}}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)
         </p>
         <hr></hr>
       </div>
-      <form className="my-form" onSubmit={handleSubmit}>
+      <form className="my-form" onSubmit={handleSubmit} style={{marginLeft:'3px',width:'100%'}}>
         <table border="1" className="my-table">
           <thead>
             <tr>
@@ -167,14 +166,14 @@ const ArchitectForm = () => {
               <td>23</td>
               <td>43</td>
               <td>CA/2019/112403</td>
-              <button className="submit-button">Delete</button>
+              <button className="submit-button" style={{marginLeft:'5px'}}>Delete</button>
             </tr>
           </tbody>
         </table>
         <br></br>
         <div className="form-group">
           <label>
-            CoA Number :<br></br>
+            CoA Number :
             <input
               type="text"
               name="coaNumber"
@@ -294,14 +293,14 @@ const Streng = () => {
   return (
     <div className="forms">
       <div className="heading">
-        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>STRUCTURAL (ONLY REGISTERED WITH GUJRERA)</h2>
-        <p style={{ marginTop: "20px" }}>
+        <h2 style={{ marginBottom: "25px"}}>STRUCTURAL (ONLY REGISTERED WITH GUJRERA)</h2>
+        <p style={{ marginBottom: "15px" }}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)
         </p>
         <hr></hr>
       </div>
-      <form className="my-form" onSubmit={handleSubmit}>
+      <form className="my-form" onSubmit={handleSubmit} style={{marginLeft:'3px',width:'100%'}}>
         <table border="1" className="my-table">
           <thead>
             <tr>
@@ -328,7 +327,7 @@ const Streng = () => {
               <td>43</td>
               <td>34</td>
               <td>kenn123</td>
-              <button className="submit-button">Delete</button>
+              <button className="submit-button" style={{marginLeft:'5px'}}>Delete</button>
             </tr>
           </tbody>
         </table>
@@ -461,11 +460,10 @@ const Cont = () => {
     e.preventDefault();
     console.log("Form data submitted", formData);
   };
-
-  return (
-    <div className="forms">
+  return(
+  <div className="forms">
       <div className="heading">
-        <h2 style={{ marginBottom: "5px", marginTop: "10px" }}>CONTRACTOR (ONLY REGISTERED WITH GUJRERA)</h2>
+        <h2 style={{ marginBottom: "25px" }}>CONTRACTOR (ONLY REGISTERED WITH GUJRERA)</h2>
         <p style={{ marginTop: "20px" }}>
           (SEE SECTION 4.11. GENERAL RULE 3.4. AUTHORITY RULE 10. REGULATION AND
           ORDERS)

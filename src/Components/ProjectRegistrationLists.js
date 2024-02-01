@@ -8,12 +8,12 @@ import Promoterdetail from "./Promoterdetail";
 import BlockEntry from "./BlockEntry";
 import AddProfessionals from "./AddProfessionals";
 import Map from "./Map";
-import Login from "./Login";
-import RegistrationForm from "./RegistrationForm";
 import DevelopmentDetails from "./DevelopmentDetails";
 import UploadDoc from "./UploadDoc";
 import AssignProff from "./AssignProff";
 import Paywall from "./Paywall";
+import PerformCertificate from "./PerformCertificate";
+import Declaration from "./Declaration";
 // import Dashboard from './Dashboard';
 // import PerformCertifi from './PerformCertifi';
 const ProjectRegistrationLists = () => {
@@ -51,9 +51,9 @@ function Content() {
         ></Route>
         <Route
           path="/perform-certification"
-          element={<div>heeloo</div>}
+          element={<PerformCertificate/>}
         ></Route>
-        <Route path="/declaration" element={<div>declaration</div>}></Route>
+        <Route path="/declaration" element={<Declaration/>}></Route>
         <Route path="/payment-page" element={<Paywall/>}></Route>
       </Routes>
     </div>
