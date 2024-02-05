@@ -10,7 +10,8 @@ import {
   Form,
   Input,
   DatePicker,
-  Flex
+  Flex,
+  InputNumber,
 } from "antd";
 import {
   UploadOutlined,
@@ -22,7 +23,7 @@ const columns = [
   {
     title: "Sr No.",
     dataIndex: "srno",
-    key: "srno"
+    key: "srno",
   },
   {
     title: "Block Name",
@@ -43,7 +44,7 @@ const columns = [
     title: "All Commencement Certificates of this block     ",
     dataIndex: "commencementCertif",
     key: "commencementCertif",
-    width:'20%',
+    width: "20%",
     render: () => (
       <Upload>
         <Button icon={<UploadOutlined />}>Upload</Button>
@@ -79,7 +80,7 @@ const columns = [
     title: "Action",
     dataIndex: "",
     key: "x",
-    width:"30%",
+    width: "30%",
     render: (text, record) => (
       <Space>
         <Button
@@ -131,12 +132,37 @@ function BlockEntry() {
   const handlePrevious = () => {
     navigate("/project-registration/upload-documents");
   };
+  const saveFormData = async (formData) => {
+    console.log({ formData });
+    try {
+      const response = await fetch("http://localhost:5551/api/saveBlockData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Form data saved successfully!", data);
+        message.success("Form data saved successfully!");
+      } else {
+        console.error("Error saving form data:", data);
+        message.error("Error saving form data:", data);
+      }
+    } catch (error) {
+      console.error("Error saving form data:", error);
+      message.error("Error saving form data:", error.message || error);
+    }
+  };
   const handleNext = () => {
     navigate("/project-registration/map");
   };
   return (
-    <div style={{width:'100%',overflow:'hidden'}}>
-      <section className="section-1" style={{margin:'5px'}}>
+    <div style={{ width: "100%", overflow: "hidden" }}>
+      <section className="section-1" style={{ margin: "5px" }}>
         <div className="container">
           <h5>
             AS UNIQUE NAMES OF BLOCK/TYPES/BUNGOLOWS/CATEGORY OF THE PROJECT AS
@@ -151,27 +177,22 @@ function BlockEntry() {
               size="middle"
               style={{ width: "100%" }}
             />
-            
           </div>
         </div>
       </section>
-      <section style={{width:'100%', margin:'5px'}}>
-        <div >
+      <section style={{ width: "100%", margin: "5px" }}>
+        <div>
           <h2>ADD BLOCK DETAILS</h2>
           <div>
             <hr></hr>
           </div>
           <div style={{ width: "100%" }}>
-            <Form
-              onFinish={(values) => {
-                console.log("Regiestered fields:", values);
-              }}
-            >
+            <Form onFinish={saveFormData}>
               <div style={{ width: "auto" }}>
                 <section className="innersection">
                   <Flex justify="space-between" align="flex-start">
                     <Form.Item
-                      name="block name"
+                      name="blockname"
                       label="7.1 Block Name"
                       required
                       labelCol={{ span: 24 }}
@@ -187,7 +208,7 @@ function BlockEntry() {
                       />
                     </Form.Item>
                     <Form.Item
-                      name="Development Start Date"
+                      name="DevelopmentStartDate"
                       label="7.2 Development Start Date"
                       required
                       type="date"
@@ -204,7 +225,7 @@ function BlockEntry() {
                       />
                     </Form.Item>
                     <Form.Item
-                      name="Development end Date"
+                      name="DevelopmentendDate"
                       label="7.3 Development End Date"
                       required
                       type="date"
@@ -224,7 +245,7 @@ function BlockEntry() {
                 <section className="innersection-1">
                   <Flex justify="space-between" align="center">
                     <Form.Item
-                      name="Date of Latest Commencement Certificate"
+                      name="DateofLatestCommencementCertificate"
                       label="7.4 Date of Latest Commencement Certificate"
                       required
                       type="date"
@@ -241,7 +262,7 @@ function BlockEntry() {
                       />
                     </Form.Item>
                     <Form.Item
-                      name="commencement certificate no"
+                      name="commencementcertificateno"
                       label="7.5 Commencement Certificate No"
                       required
                       labelCol={{ span: 24 }}
@@ -263,7 +284,7 @@ function BlockEntry() {
                       labelCol={{ span: 24 }}
                       wrapperCol={{ span: 16 }}
                     >
-                      <Input
+                      <InputNumber
                         style={{
                           width: "100%",
                           height: "40px",
@@ -286,7 +307,7 @@ function BlockEntry() {
                       labelCol={{ span: 24 }}
                       wrapperCol={{ span: 16 }}
                     >
-                      <Input
+                      <InputNumber
                         style={{
                           width: "100%",
                           height: "40px",
@@ -301,7 +322,7 @@ function BlockEntry() {
                       labelCol={{ span: 24 }}
                       wrapperCol={{ span: 16 }}
                     >
-                      <Input
+                      <InputNumber
                         style={{
                           width: "100%",
                           height: "40px",
@@ -312,26 +333,6 @@ function BlockEntry() {
                   </Flex>
                 </section>
               </div>
-              <section>
-                <Form.Item
-                  name="allCommencementCertif"
-                  label="7.9 All Commencement Certificates of this Block"
-                  valuePropName="fileList"
-                  getValueFromEvent={(e) => e.fileList}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please upload a document!",
-                    },
-                  ]}
-                  labelCol={{ span: 24 }}
-                  wrapperCol={{ span: 16 }}
-                >
-                  <Upload maxCount={1}>
-                    <Button icon={<UploadOutlined />}>Upload</Button>
-                  </Upload>
-                </Form.Item>
-              </section>
               <Form.Item
                 style={{
                   marginTop: "20px",
@@ -347,6 +348,28 @@ function BlockEntry() {
               </Form.Item>
               {/* </section> */}
             </Form>
+            <section>
+              <Form>
+                <Form.Item
+                  name="allCommencementCertif"
+                  label="7.9 All Commencement Certificates of this Block"
+                  valuePropName="fileList"
+                  getValueFromEvent={(e) => e.fileList}
+                  // rules={[
+                  //   {
+                  //     required: true,
+                  //     message: "Please upload a document!",
+                  //   },
+                  // ]}
+                  labelCol={{ span: 24 }}
+                  wrapperCol={{ span: 16 }}
+                >
+                  <Upload maxCount={1}>
+                    <Button icon={<UploadOutlined />}>Upload</Button>
+                  </Upload>
+                </Form.Item>
+              </Form>
+            </section>
           </div>
           <div
             style={{
