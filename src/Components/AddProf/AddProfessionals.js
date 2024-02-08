@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./MyForm.css";
-import jsonData from "./data.json";
+import jsonData from "../data.json";
 function AddProfessionals() { 
   return (
     <div style={{width:'100%'}}>

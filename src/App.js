@@ -1,12 +1,12 @@
 // src/App.js
 import React from "react";
 import ProjectRegistrationLists from "./Components/ProjectRegistrationLists";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
 import { Routes, Route, Link } from "react-router-dom";
 import SignUp from "./Components/Signup/SignUp";
-import Register from "./Components/Register";
-import RegistrationForm from "./Components/RegistrationForm";
+import Register from "./Components/Register/Register";
+import RegistrationForm from "./Components/ProjectRegistrationForm/RegistrationForm";
 
 function App() {
   const [isSignUpSuccessful, setIsSignUpSuccessful] = React.useState(false);

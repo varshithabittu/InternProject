@@ -5,7 +5,6 @@ import {
   Input,
   Space,
   Table,
-  Flex,
   Popconfirm,
   Modal,
   InputNumber,
@@ -13,11 +12,6 @@ import {
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons/lib/icons";
 import axios from "axios";
 const columns = [
-  {
-    title: "Sr No.",
-    dataIndex: "srno",
-    key: "srno",
-  },
   {
     title: "Type of Inventory",
     dataIndex: "typeofInventory",
@@ -70,7 +64,7 @@ const DevelopmentDetails = () => {
       );
       const data = response.data;
       data.forEach((record, index) => {
-        record.srno = index + 1;
+        record.index = index + 1;
       });
       setFormData(data);
     } catch (error) {
@@ -142,6 +136,14 @@ const DevelopmentDetails = () => {
               key: record.srno,
             }))}
             columns={[
+              {
+                title: "S.NO",
+                dataIndex: "",
+                key: "",
+                render: (record) => {
+                  return <span>{record.index}</span>;
+                },
+              },
               ...columns,
               {
                 title: "Action",
@@ -369,7 +371,7 @@ const DevelopmentDetails = () => {
                 },
               ]}
               labelCol={{ span: 24 }}
-              wrapperCol={{ span: 16 }}
+              wrapperCol={{ span: 24 }}
             >
               <InputNumber />
             </Form.Item>
