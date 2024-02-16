@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col,Radio,DatePicker } from 'antd';
+import { Form, Input, Button, Row, Col,Radio,DatePicker,Select } from 'antd';
 
-const Promoterdetail = () => {
+const ProjectRegistration = () => {
   const layout = {
     labelCol: { span: 24 },
     wrapperCol: { span: 24 },
@@ -9,7 +9,7 @@ const Promoterdetail = () => {
   const onFinish = (values) => {
     console.log('Success:', values);
   };
-
+  
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
@@ -22,29 +22,52 @@ const Promoterdetail = () => {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item>
-        <h2>PROMOTER DETAIL</h2>
+        <h2>PROJECT DETAIL</h2>
       </Form.Item>
       <Row gutter={16}>
         <Col span={8}>
-          <Form.Item name="promoterName" label="1.1 Promoter Name" rules={[{ required: true, message: 'Please input your promoter name!' }]}>
-            <Input placeholder="Promoter Name*" />
+          <Form.Item name="projectName" label="1.1 Project Name" rules={[{ required: true, message: 'Please input your project name!' }]}>
+            <Input placeholder="Project Name*" />
           </Form.Item>
         </Col>
         <Col span={8}>
-          <Form.Item name="projectType" label="1.2 Project Type" rules={[{ required: true, message: 'Please input your project type!' }]}>
-            <Input placeholder="Project Type*" />
+          <Form.Item name="projecttype" label="1.2 Project Type" rules={[{ required: true, message: 'Please input your project name!' }]}>
+            <Select
+            placeholder="Project Type"
+            options={[
+              {
+                value:"Residential",
+                label:"Residential",
+              },
+              {
+                value:"Commercial",
+                label:"Commercial",
+              }
+            ]}
+            />
           </Form.Item>
         </Col>
         <Col span={8}>
-          <Form.Item name="projectDescription" label="1.3 Project Description" rules={[{ required: true, message: 'Please input your project description!' }]}>
-            <Input placeholder="Project Description*" />
-          </Form.Item>
-        </Col>
+        <Form.Item name="projectstatus" label="1.3 Project Status" rules={[{ required: true, message: 'Please input your project status!' }]}>
+            <Select
+            placeholder="Project Status"
+            options={[
+              {
+                value:"new",
+                label:"new",
+              },
+              {
+                value:"old",
+                label:"old",
+              }
+            ]}
+            />
+          </Form.Item></Col>
       </Row>
       <Row gutter={16}>
         <Col span={8}>
-          <Form.Item name="explanatoryNote" label="1.4 Explanatory Note" rules={[{ required: true, message: 'Please input your explanatory note!' }]}>
-            <Input placeholder="Explanatory Note by Promoter (Reasons)*" />
+          <Form.Item name="projectDescriptin" label="1.4 Project Description" rules={[{ required: true, message: 'Please input project description' }]}>
+            <Input placeholder="Project Description" />
           </Form.Item>
         </Col>
         <Col span={8}>
@@ -60,7 +83,7 @@ const Promoterdetail = () => {
       </Row>
       <Row gutter={16}>
         <Col span={8}>
-          <Form.Item name="totalLandArea" label="1.7 Total Land Area" rules={[{ required: true, message: 'Please input total land area!' }]}>
+          <Form.Item name="totalLandArea" label="1.7 Total Land Area of Approved Layout (Sq Mtrs.)*" rules={[{ required: true, message: 'Please input total land area!' }]}>
             <Input placeholder="Total Land Area of Approved Layout (Sq Mtrs.)*" />
           </Form.Item>
         </Col>
@@ -330,7 +353,7 @@ const Promoterdetail = () => {
         </Col>
       </Row>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" >
           Next
         </Button>
       </Form.Item>
@@ -338,4 +361,4 @@ const Promoterdetail = () => {
   );
 }
 
-export default Promoterdetail;
+export default ProjectRegistration;

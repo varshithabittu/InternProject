@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as XLSX from "xlsx";
 import FileSaver from "file-saver";
 import { EXCEL_FILE_BASE64 } from "../constant";
-
+import {Button} from 'antd'
 const PerformCertificate = ({ onFileUpload }) => {
   const [file, setFile] = useState(null);
 
@@ -19,8 +19,6 @@ const PerformCertificate = ({ onFileUpload }) => {
       const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
         header: 1,
       });
-
-      // Pass the sheet data to the parent component
       onFileUpload(sheet);
     };
 
@@ -28,13 +26,6 @@ const PerformCertificate = ({ onFileUpload }) => {
   };
 
   const downloadTemplate = () => {
-    // const wb = XLSX.utils.book_new();
-    // XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Header 1', 'Header 2']]));
-
-    // const blob = XLSX.write(wb, { bookType: 'xlsx', type: 'blob' });
-
-    // saveAs(blob, 'template.xlsx');
-
     let dataBlob = EXCEL_FILE_BASE64;
     let sliceSize = 1024;
     let byteCharacters = atob(dataBlob);
@@ -58,9 +49,9 @@ const PerformCertificate = ({ onFileUpload }) => {
     <div>
       <div
         style={{
-          backgroundColor: "rgb(239, 238, 236)",
           height: "70px",
           width: "95%",
+          marginBottom:"20px"
         }}
       >
         <button className="styling-to-but1">Project Detail</button>
@@ -76,10 +67,10 @@ const PerformCertificate = ({ onFileUpload }) => {
           }}
         >
           {" "}
-          <h3>FORM 1 A & B OF PROJECT REGISTRATION APPLICATION-ABC</h3>
+          <h3 style={{marginTop:'85px',marginBottom:'30px'}}>FORM 1 A & B OF PROJECT REGISTRATION APPLICATION-ABC</h3>
         </div>
         <br></br>
-        <form className="my-form">
+        <form className="my-formsss">
           <div
             style={{
               alignItems: "center",
@@ -88,16 +79,15 @@ const PerformCertificate = ({ onFileUpload }) => {
               marginTop: "3%",
             }}
           >
-            <h4>
+            <h4 style={{marginLeft:'2px',marginTop:'30px',marginBottom:'10px'}}>
               PLEASE UPLOAD BLOCKWISE PHOTOGRAPHS THROUGH GUJRERA MOBILE APP
               BEFORE FILLING UP FORM1
             </h4>{" "}
           </div>
           <div className="form-group">
-            <div className="required-fields">
-              <label>Upload Form 1 A&B File </label>
-              <br></br>
-              <br></br>
+            <div >
+              {/* <label style={{width:'100%'}}>Upload Form 1 A&B File </label>
+              <div>
               <label>
                 <input
                   type="file"
@@ -106,15 +96,14 @@ const PerformCertificate = ({ onFileUpload }) => {
                 />
                 {file && <p>Selected File: {file.name}</p>}
               </label>
-            </div>
-            <br></br>
+            </div> */}
             <button className="button-to-click" onClick={downloadTemplate}>
               Download Template
             </button>
-
+              </div>
             <br></br>
             <br></br>
-            <label className="styling-for-form">
+            <label className="styling-for-form" style={{width:'fit-content',backgroundColor:'green',color:'white',borderRadius:'5px', alignContent:'center'}}>
               UploadForm 1 A&B File
               <input
                 className="file-input-1"

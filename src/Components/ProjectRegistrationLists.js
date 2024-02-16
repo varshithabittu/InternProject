@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Headers/Header";
 import { Routes, Route } from "react-router-dom";
-import ProjectRegistration from "./ProjectRegistration/ProjectRegistration";
+
 import Sidemenu from "./Sidemenu";
 import Prviousdetails from "./PreviousDetails/Prviousdetails";
 import Promoterdetail from "./PromoterDetails/Promoterdetail";
@@ -14,6 +14,7 @@ import AssignProff from "./AsignProf/AssignProff";
 import Paywall from "./Payment/Paywall";
 import PerformCertificate from "./PerformCertificate/PerformCertificate";
 import Declaration from "./Declaration/Declaration";
+import ProjectRegistration from "./ProjectDetails/ProjectRegistration";
 // import Dashboard from './Dashboard';
 // import PerformCertifi from './PerformCertifi';
 const ProjectRegistrationLists = () => {
@@ -33,7 +34,7 @@ function Content() {
       <Routes>
         <Route path="/promoter-detail" element={<Promoterdetail />}></Route>
         <Route path="/previous-project" element={<Prviousdetails />}></Route>
-        <Route path="/project-detail" element={<ProjectRegistration />}></Route>
+        <Route path="/project-detail" element={<ProjectRegistration/>}></Route>
         <Route
           path="/development-detail"
           element={<DevelopmentDetails />}

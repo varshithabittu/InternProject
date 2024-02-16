@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons/lib/icons";
 import "./Login.css";
 import axios from "axios";
-import usersData from "../users.json";
-// import { PrismaClient } from '@prisma/client'
-// const prisma = new PrismaClient()
-
+//import usersData from "../users.json";
 const Login = ({ onSuccess }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -24,6 +21,13 @@ const Login = ({ onSuccess }) => {
         message.success("Login Successful!");
         onSuccess();
         navigate("/project-registration/*");
+      }
+      else if(response.status===401){
+        message.error("Invalid Credentials");
+        navigate("/login");
+      } else if(response.status===202){
+        message.error("User Doesn't Exist.Please Register");
+        navigate("/signup");
       }
     } catch (errorr) {
       console.log("Error during login", errorr);

@@ -142,13 +142,14 @@ function BlockEntry() {
         },
         body: JSON.stringify(formData),
       });
-
       const data = await response.json();
 
       if (response.ok) {
         console.log("Form data saved successfully!", data);
         message.success("Form data saved successfully!");
-      } else {
+      } else if(response.status===400){
+        message.error("Invalid field types")
+      }else {
         console.error("Error saving form data:", data);
         message.error("Error saving form data:", data);
       }
@@ -187,7 +188,7 @@ function BlockEntry() {
             <hr></hr>
           </div>
           <div style={{ width: "100%" }}>
-            <Form onFinish={saveFormData}>
+            <Form onFinish={saveFormData} action="http://localhost:5551/api/saveBlockData" method="POST" enctype="multipart/form-data">
               <div style={{ width: "auto" }}>
                 <section className="innersection">
                   <Flex justify="space-between" align="flex-start">
@@ -332,6 +333,26 @@ function BlockEntry() {
                     </Form.Item>
                   </Flex>
                 </section>
+                <section>
+                <Form.Item
+                  name="allCommencementCertif"
+                  label="7.9 All Commencement Certificates of this Block"
+                  valuePropName="fileList"
+                  getValueFromEvent={(e) => e.fileList}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please upload a document!",
+                    },
+                  ]}
+                  labelCol={{ span: 24 }}
+                  wrapperCol={{ span: 16 }}
+                >
+                  <Upload maxCount={1}>
+                    <Button icon={<UploadOutlined />}>Upload</Button>
+                  </Upload>
+                </Form.Item>
+                </section>
               </div>
               <Form.Item
                 style={{
@@ -348,28 +369,7 @@ function BlockEntry() {
               </Form.Item>
               {/* </section> */}
             </Form>
-            <section>
-              <Form>
-                <Form.Item
-                  name="allCommencementCertif"
-                  label="7.9 All Commencement Certificates of this Block"
-                  valuePropName="fileList"
-                  getValueFromEvent={(e) => e.fileList}
-                  // rules={[
-                  //   {
-                  //     required: true,
-                  //     message: "Please upload a document!",
-                  //   },
-                  // ]}
-                  labelCol={{ span: 24 }}
-                  wrapperCol={{ span: 16 }}
-                >
-                  <Upload maxCount={1}>
-                    <Button icon={<UploadOutlined />}>Upload</Button>
-                  </Upload>
-                </Form.Item>
-              </Form>
-            </section>
+            
           </div>
           <div
             style={{

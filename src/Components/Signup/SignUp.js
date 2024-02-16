@@ -1,23 +1,33 @@
 import React from "react";
 import { Card, Flex, Form, Input, Select, Button,message } from "antd";
 // import firebase from "./firebase.js";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 const { Option } = Select;
 const SignUp = ({onSuccess}) => {
   const navigate=useNavigate();
 
-  const handleSignUp=()=>{
-   try{
-    onSuccess();
-    message.success('Sign in Successful')
-    navigate('/register')
-   } 
-   catch(error)
-   {
-    message.error('Error in signing up. Please try again');
-    navigate('/signup')
-   }
+  const handleSignUp=async (values)=>{
+    try {
+      console.log(values.username.type);
+      const response = await axios.post("http://localhost:5551/api/signup", {
+        username: values.username,
+        password: values.password,
+      });
+      if (response.status === 200) {
+        message.success("Signup Successful!");
+        onSuccess();
+        navigate("/project-registration/*");
+      }
+      else if(response.status===400){
+        message.error("Invalid Formate of username or password");
+        navigate("/signup");
+      }
+    } catch (errorr) {
+      console.log("Error during signin", errorr);
+      message.error("Error while signin, Please try again!");
+    } 
   }
   return (
     <>
@@ -31,10 +41,10 @@ const SignUp = ({onSuccess}) => {
         }}
       >
         <Flex horizontal justify="center" align="center">
-          <Form>
+          <Form onFinish={handleSignUp}>
             <Form.Item
-              name="emailId"
-              label="EmailId"
+              name="username"
+              label="UserName"
               labelCol={24}
               wrapperCol={24}
               required
@@ -42,14 +52,14 @@ const SignUp = ({onSuccess}) => {
               <Input required/>
             </Form.Item>
             <Form.Item
-              name="mobile"
-              label="Mobile Number"
+              name="password"
+              label="Password"
               labelCol={24}
               wrapperCol={24}
             >
               <Input />
             </Form.Item>
-            <Form.Item name="type" label="Type" labelCol={24} wrapperCol={24}>
+            {/* <Form.Item name="type" label="Type" labelCol={24} wrapperCol={24}>
               <Select placeholder="--Select Type--" allowClear>
                 <Option value="Agent">Agent</Option>
                 <Option value="Architect">Architect</Option>
@@ -70,8 +80,8 @@ const SignUp = ({onSuccess}) => {
               >
                 Send OTP
               </Button>
-            </Form.Item>
-            <Form.Item id="sign-in-button"></Form.Item>
+            </Form.Item> */}
+            <Form.Item id="sign-in-button"><Button type="primary" htmlType="submit">SignUp</Button></Form.Item>
           </Form>
         </Flex>
       </Card>
