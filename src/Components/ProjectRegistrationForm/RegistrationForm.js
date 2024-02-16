@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import { generateRegistrationNumber } from '../Utility'; 
+import { generateRegistrationNumber } from './Utility'; 
 import {useNavigate} from "react-router-dom"
 
 const RegistrationForm = ({onSuccess}) => {
