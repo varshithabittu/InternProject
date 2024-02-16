@@ -67,7 +67,7 @@ const ProjectRegistration = () => {
       <Row gutter={16}>
         <Col span={8}>
           <Form.Item name="projectDescriptin" label="1.4 Project Description" rules={[{ required: true, message: 'Please input project description' }]}>
-            <Input placeholder="Project Description" />
+            <Input placeholder="Project Description" type='text'/>
           </Form.Item>
         </Col>
         <Col span={8}>
